@@ -80,10 +80,9 @@
 		977B954D1DD4C40400F6F62B /* ScanProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D6811E1D6F70AC00E5FA99 /* ScanProcedure.swift */; };
 		9780DE061E43BFF5009B6945 /* NetworkActivityIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780DE051E43BFF5009B6945 /* NetworkActivityIndicatorController.swift */; };
 		979681AA1F470E9B008A50FF /* ZimManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 979681A81F46917E008A50FF /* ZimManager.mm */; };
-		97972C001F6052FC00663333 /* SearchProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972F81561DDBFC79008D7289 /* SearchProcedure.swift */; };
-		97972C011F60530800663333 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1FD141D6F71CE00A80EE2 /* SearchResult.swift */; };
-		97972C021F6073FC00663333 /* ZimManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EE6D1F4A99A700926FD1 /* ZimManager.swift */; };
-		97972C031F6073FE00663333 /* ZimManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 979681A81F46917E008A50FF /* ZimManager.mm */; };
+		97972C051F60752100663333 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97972C041F60752100663333 /* SearchResult.swift */; };
+		97972C061F6076E000663333 /* ZimManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A6EE6D1F4A99A700926FD1 /* ZimManager.swift */; };
+		97972C071F60774A00663333 /* ZimManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 979681A81F46917E008A50FF /* ZimManager.mm */; };
 		979D17831E6DE50C006AE496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979D17821E6DE50C006AE496 /* Assets.xcassets */; };
 		97A08C151DD263B90070D0E4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D681341D6F711A00E5FA99 /* Book.swift */; };
 		97A1FD161D6F71CE00A80EE2 /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1FD121D6F71CE00A80EE2 /* DirectoryMonitor.swift */; };
@@ -292,6 +291,7 @@
 		9793158C1E5127930093D3BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		979681A71F46917E008A50FF /* ZimManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZimManager.h; path = Shared/Bridging/ZimManager.h; sourceTree = SOURCE_ROOT; };
 		979681A81F46917E008A50FF /* ZimManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ZimManager.mm; path = Shared/Bridging/ZimManager.mm; sourceTree = SOURCE_ROOT; };
+		97972C041F60752100663333 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		979D17821E6DE50C006AE496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97A1FD121D6F71CE00A80EE2 /* DirectoryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
 		97A1FD141D6F71CE00A80EE2 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -1017,6 +1017,7 @@
 				979681A71F46917E008A50FF /* ZimManager.h */,
 				979681A81F46917E008A50FF /* ZimManager.mm */,
 				97A6EE6D1F4A99A700926FD1 /* ZimManager.swift */,
+				97972C041F60752100663333 /* SearchResult.swift */,
 			);
 			path = Bridging;
 			sourceTree = "<group>";
@@ -1914,14 +1915,12 @@
 				973208231DD19C7600EDD3DC /* DownloadProgress.swift in Sources */,
 				97A1FD161D6F71CE00A80EE2 /* DirectoryMonitor.swift in Sources */,
 				9726591D1D90A64600D1DFFB /* Notification.swift in Sources */,
-				97972C031F6073FE00663333 /* ZimManager.mm in Sources */,
 				97D231AE1E677CB300DCD4A4 /* SearchBar.swift in Sources */,
 				97FDACC41D85A3B300DEDACB /* Language+CoreDataProperties.swift in Sources */,
 				97D231981E677C6700DCD4A4 /* SearchBaseController.swift in Sources */,
-				97972C001F6052FC00663333 /* SearchProcedure.swift in Sources */,
-				97972C021F6073FC00663333 /* ZimManager.swift in Sources */,
 				97D2318E1E677C6700DCD4A4 /* LibraryTabController.swift in Sources */,
 				973208291DD223DB00EDD3DC /* LibraryProcedure.swift in Sources */,
+				97972C061F6076E000663333 /* ZimManager.swift in Sources */,
 				97A08C151DD263B90070D0E4 /* Book.swift in Sources */,
 				97D2319D1E677C6700DCD4A4 /* NotificationSettingController.swift in Sources */,
 				97D2319B1E677C6700DCD4A4 /* SearchScopeAndHistoryController.swift in Sources */,
@@ -1934,6 +1933,7 @@
 				97D2319F1E677C6700DCD4A4 /* StaticWebController.swift in Sources */,
 				97D2318F1E677C6700DCD4A4 /* Buttons.swift in Sources */,
 				97D231A81E677CB300DCD4A4 /* BarButtonItems.swift in Sources */,
+				97972C051F60752100663333 /* SearchResult.swift in Sources */,
 				97A1FD421D6F728200A80EE2 /* Extensions.swift in Sources */,
 				97D231AC1E677CB300DCD4A4 /* RefreshLibControl.swift in Sources */,
 				97D2318D1E677C6700DCD4A4 /* LibraryLanguageController.swift in Sources */,
@@ -1941,6 +1941,7 @@
 				97D231AB1E677CB300DCD4A4 /* Others.swift in Sources */,
 				97D681371D6F711A00E5FA99 /* Article.swift in Sources */,
 				97D231911E677C6700DCD4A4 /* JSInjection.swift in Sources */,
+				97972C071F60774A00663333 /* ZimManager.mm in Sources */,
 				976C1DD41E300695005EDEC4 /* UIProcedure.swift in Sources */,
 				97D231961E677C6700DCD4A4 /* WelcomeController.swift in Sources */,
 				97DA5C1E1E6F420800873048 /* BrowsingHistoryController.swift in Sources */,
@@ -1958,7 +1959,6 @@
 				97D2319C1E677C6700DCD4A4 /* FontSizeController.swift in Sources */,
 				97D2319E1E677C6700DCD4A4 /* SettingController.swift in Sources */,
 				97C601DE1D7F342100362D4F /* HTMLHeading.swift in Sources */,
-				97972C011F60530800663333 /* SearchResult.swift in Sources */,
 				975B90FE1CEB909100D13906 /* iOSExtensions.swift in Sources */,
 				97318E541E6780F9000B718B /* MigrationPolicy.swift in Sources */,
 				97D231901E677C6700DCD4A4 /* Controllers.swift in Sources */,

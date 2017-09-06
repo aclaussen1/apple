@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        ZimMultiReader.shared.startScan()
+        ZimManager.shared.scan()
         UserHabit.shared.appDidBecomeActive()
     }
     

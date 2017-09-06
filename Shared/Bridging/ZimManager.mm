@@ -37,10 +37,11 @@ std::vector<std::string> *searcherZimIDs = NULL;
     self = [super init];
     if (self) {
         readers.reserve(20);
-#if TARGET_OS_MAC
-        zimURLs = [[NSMutableDictionary alloc] init];
-#elif TARGET_OS_IPHONE
+        
+#if TARGET_OS_IPHONE
         [self scan];
+#else
+        zimURLs = [[NSMutableDictionary alloc] init];
 #endif
     }
     return self;
@@ -53,7 +54,6 @@ std::vector<std::string> *searcherZimIDs = NULL;
 #pragma mark - reader management
 
 - (void)scan {
-    // TODO: reuse other functions
     NSURL *docDirURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:NULL];
     NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:docDirURL includingPropertiesForKeys:nil options:(NSDirectoryEnumerationSkipsSubdirectoryDescendants) error:nil];
     
@@ -78,14 +78,14 @@ std::vector<std::string> *searcherZimIDs = NULL;
 
 - (void)addBookByURL:(NSURL *)url {
     try {
-#if TARGET_OS_MAC
+#if !(TARGET_OS_IPHONE)
         [url startAccessingSecurityScopedResource];
 #endif
         std::shared_ptr<kiwix::Reader> reader = std::make_shared<kiwix::Reader>([url fileSystemRepresentation]);
         std::string identifierC = reader->getId();
         readers.insert(std::make_pair(identifierC, reader));
 
-#if TARGET_OS_MAC
+#if !(TARGET_OS_IPHONE)
         NSString *identifier = [NSString stringWithCString:identifierC.c_str() encoding:NSUTF8StringEncoding];
         zimURLs[identifier] = url;
 #endif
@@ -96,7 +96,7 @@ std::vector<std::string> *searcherZimIDs = NULL;
     std::string bookIDC = [bookID cStringUsingEncoding:NSUTF8StringEncoding];
     readers.erase(bookIDC);
 
-#if TARGET_OS_MAC
+#if !(TARGET_OS_IPHONE)
     [zimURLs[bookID] stopAccessingSecurityScopedResource];
     [zimURLs removeObjectForKey:bookID];
 #endif
