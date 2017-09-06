@@ -18,17 +18,17 @@ class GlobalQueue: ProcedureQueue {
         self.scanOperation = scanOperation
     }
     
-    private weak var searchOperation: SearchOperation?
-    func add(searchOperation: SearchOperation) {
+    private weak var search: SearchProcedure?
+    func add(searchProcedure: SearchProcedure) {
         if let scanOperation = scanOperation {
-            searchOperation.addDependency(scanOperation)
+            searchProcedure.addDependency(scanOperation)
         }
         
-        if let searchOperation = self.searchOperation {
-            searchOperation.cancel()
+        if let search = self.search {
+            search.cancel()
         }
-        add(operation: searchOperation)
-        self.searchOperation = searchOperation
+        add(operation: searchProcedure)
+        self.search = searchProcedure
     }
     
     private weak var articleLoadOperation: ArticleLoadOperation?

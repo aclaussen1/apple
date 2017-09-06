@@ -16,7 +16,7 @@ class SearchProcedure: Procedure {
     init(term: String) {
         self.term = term
         super.init()
-        add(condition: MutuallyExclusive<SearchController>())
+//        add(condition: MutuallyExclusive<SearchController>())
         name = "Search Procedure"
     }
     

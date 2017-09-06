@@ -83,11 +83,7 @@ class SearchResultController: SearchBaseTableController, UITableViewDataSource, 
     
     func configureArticleCell(_ cell: ArticleCell, result: SearchResult) {
         guard let book = Book.fetch(result.bookID, context: AppDelegate.persistentContainer.viewContext) else {return}
-        if UIApplication.buildStatus == .alpha {
-            cell.titleLabel.text = result.title + result.rankInfo
-        } else {
-            cell.titleLabel.text = result.title
-        }
+        cell.titleLabel.text = result.title
         cell.hasPicIndicator.backgroundColor = book.hasPic ? AppColors.hasPicTintColor : UIColor.lightGray
         cell.favIcon.image = book.favIcon != nil ? UIImage(data: book.favIcon!) : nil
     }
