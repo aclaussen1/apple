@@ -52,10 +52,10 @@ class SearchContainer: UIViewController {
     }
     
     private func startSearch() {
-        let search = SearchProcedure(term: searchText)
+        let search = SearchOperation(searchText: searchText)
         search.add(observer: DidFinishObserver { [unowned self] (operation, errors) in
-            guard let search = operation as? SearchProcedure else {return}
-            OperationQueue.main.addOperation({ 
+            guard let search = operation as? SearchOperation else {return}
+            OperationQueue.main.addOperation({
                 self.resultController.reload(searchText: self.searchText, results: search.results)
             })
         })
